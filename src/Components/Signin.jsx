@@ -6,8 +6,8 @@ const Signin = () => {
     const {user,signIn}=useContext(AuthContext)
     const handleSingin=event=>{
         event.preventDefault()
+
         const form=event.target;
-       
         const email=form.email.value;
         const password=form.password.value;
         console.log(email,password);
@@ -15,6 +15,8 @@ const Signin = () => {
         .then(result=>{
             const loggeduser=result.user;
             console.log(loggeduser);
+            form.reset()
+
         })
         .catch(error=>{
             console.log(error);

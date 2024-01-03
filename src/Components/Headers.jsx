@@ -14,17 +14,22 @@ const Headers = () => {
         <div className='bg-gray-700 text-white rounded-xl my-3 py-2'>
            
             <Link  to='/' className='text-2xl text-blue-500 mr-2'>Home</Link>
+           {user && <Link  to='/orders' className='text-2xl text-blue-500 mr-2'>Orders</Link>}
             <Link to='/gallery' className='text-2xl text-blue-500 mr-2'>Gallery</Link>
             <Link to='/register' className='text-2xl text-blue-500 mr-2'>Register</Link>
-            <Link to='/signin' className='text-2xl text-blue-500 mr-2'>Login</Link>
-            <div>
+        
+          
                 {
-                    user ? <><span>{user.email}</span> 
+                    user ? <>
+                    <span>{user.email}</span> 
                    <button onClick={handlilogOut} className="btn btn-xs">Sign Out</button>
-                    </>:
-                    <><Link to='/signin' className='text-xl text-blue-500 mr-2'>Login</Link> </>
+                    </>
+                    :
+                    <>
+                    <Link to='/signin' className='text-xl text-blue-500 mr-2'>Login</Link>
+                     </>
                 }
-            </div>
+           
         </div>
     );
 };

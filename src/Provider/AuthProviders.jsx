@@ -7,6 +7,7 @@ const auth = getAuth(app);
 
 const AuthProviders = ({children}) => {
     const [user,setUser]=useState(null)
+    const [loading,setLoading]=useState(true)
     const createUser=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
     }
@@ -15,7 +16,7 @@ const AuthProviders = ({children}) => {
     }
 
     const logout=()=>{
-        return signOut(auth)
+        return  signOut(auth)
     }
 
     useEffect(()=>{
@@ -23,6 +24,7 @@ const AuthProviders = ({children}) => {
 
            console.log('on state change',currentUser);
            setUser(currentUser)
+           setLoading(false)
        });
        return ()=>{
         unsubScribe()
@@ -31,6 +33,7 @@ const AuthProviders = ({children}) => {
 
     const authinfo={
         user,
+        loading,
         createUser,
         signIn,
         logout
