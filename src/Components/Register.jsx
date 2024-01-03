@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
     const {user,createUser}=useContext(AuthContext)
-    console.log(createUser);
+    // console.log(createUser);
     const handleRegister=event=>{
         event.preventDefault()
         const form=event.target;
@@ -27,7 +27,7 @@ const Register = () => {
            <div className="hero min-h-screen bg-gray-300">
   <div className="hero-content flex-col ">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
+      <h1 className="text-5xl font-bold">Register First!</h1>
       
     </div>
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
